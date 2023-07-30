@@ -54,7 +54,7 @@ export default function Home() {
       <div className="w-full grid md:grid-cols-4 mb-10">
 
         {categoriesData.map((category, index) => (
-          <CategoryCard title={category.title} image={category.image} url={category.url}/>
+          <CategoryCard key={index} title={category.title} image={category.image} url={category.url}/>
         ))}
     
       </div>
