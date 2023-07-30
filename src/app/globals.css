@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+
+.card-zoom {
+  @apply 
+    relative 
+    flex 
+    items-center 
+    justify-center 
+    /* m-3  */
+    overflow-hidden 
+    /* shadow-xl  */
+    w-full
+    h-80 
+    text-center
+    /* rounded-2xl  */
+    cursor-pointer;
+    max-width: 99%;
+    margin: 2px;
+}
+.card-zoom-image {
+  @apply 
+    absolute 
+    w-full 
+    h-full 
+    transition-all 
+    duration-700 
+    ease-in-out 
+    transform 
+    bg-center 
+    bg-cover;
+}
+.card-zoom-text {
+  @apply 
+    /* absolute  */
+    text-4xl 
+    scale-100 
+    z-20 
+    font-black 
+    transition-all 
+    duration-1000 
+    ease-in-out 
+    transform 
+    /* scale-150  */
+    text-gray-50 
+    opacity-100;
+}
+.card-zoom:hover .card-zoom-image {
+  @apply 
+    scale-150;
+}
+.card-zoom:hover .card-zoom-text {
+  @apply 
+    scale-50 
+    opacity-60;
+}
+
+.section-heading{
+  @apply 
+    text-4xl
+    font-semibold
+    text-main
+    mt-2;
+}
+
+.section-subheading{
+  @apply 
+    text-3xl
+    text-main
+    mt-4;
+}
+
